@@ -1,5 +1,7 @@
 .env/
 */__pycache/
+*/__pycache__/
 */*/__pycache__/
 db.sqlite3
 sk_notes.txt
+secrets.py
