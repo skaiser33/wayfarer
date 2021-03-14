@@ -1,0 +1,23 @@
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: 'Josefin Slab', serif;
+  background: rgb(171, 218, 247);
+  background-image: url(../images/home_background.jpg);
+  background-attachment: fixed;
+  background-position: center;
+}
+
+h1 {
+  font-family: 'Ranchers', cursive;
+} 
+
+main {
+  flex: 1 0 auto;
+}
+
+/* footer {
+  padding-top: 0;
+  text-align: right;
+} */

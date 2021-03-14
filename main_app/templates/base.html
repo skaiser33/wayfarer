@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Wayfarer</title>
+  {% comment %} FAVICON {% endcomment %}
+  <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+  {% comment %} FONTS {% endcomment %}
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Ranchers&display=swap" rel="stylesheet">
+  {% comment %} BOOTSTRAP {% endcomment %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  {% comment %} CUSTOM CSS {% endcomment %}
+  <link rel="stylesheet" type="text/css" href="{% static 'main_app/css/style.css' %}">
 </head>
 <body>
   <header class="navbar-fixed">
