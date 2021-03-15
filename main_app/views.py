@@ -8,9 +8,13 @@ from .models import Profile
 def home(request):
   return render(request, 'home.html')
 
-# Define the home view
+# Define the about view
 def about(request):
   return render(request, 'about.html')
+
+# Define the profile view
+def profile(request):
+  return render(request, 'profile.html')
 
 def signup(request):
   error_message = ''
@@ -19,7 +23,7 @@ def signup(request):
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return HttpResponse('working signup')
+      return rebder(request, 'profile.html')
     else:
       error_message = 'Invalid sign up - try again'
   form = UserCreationForm()
