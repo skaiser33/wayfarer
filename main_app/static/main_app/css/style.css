@@ -13,11 +13,6 @@ body {
 .navbar {
   border-bottom: 3px solid white;
 } 
-/* rgb(231, 231, 235);
-
-/* .right {
-  align-items: right;
-} */
 
 ul {
   list-style-type: none;
@@ -29,9 +24,9 @@ li {
 }
 
 h1 {
+  color: rgb(16, 100, 247);
   font-size: 5em;
   font-family: 'Ranchers', cursive;
-  color: white;
 } 
 
 main {
@@ -45,12 +40,7 @@ footer {
 
 p {
   font-size: 1.5em;
-  
 }
-
-/* .btn {
-  color: rgb(51,123,247);
-} */
 
 .navbar-brand {
   font-family: 'Ranchers', cursive;
@@ -58,11 +48,33 @@ p {
 }
 
 .nav-item, .navbar-nav {
-/* .brand { */
   font-family: 'Ranchers', cursive;
   font-size: 1.5em;
-  /* color: rgb(51,123,247); THIS DOESN'T CHANGE THE COLOR...WHY?*/
 }
+
+.btn-outline-success {
+  color:white;
+  background-color:transparent;
+  border-color:white;
+}  
+
+.btn-outline-success:hover {
+  color:rgb(16, 100, 247);
+  background-color: rgb(150,216,245);
+  border-color:white;
+} 
+
+.navbar-nav > li{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbar-nav > form{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
 /* IF NEEDED TO OVERRIR BOOTSTRAP SWITCH FROM content-box to border-box */
 /* .selector-for-some-widget {
   box-sizing: content-box;
