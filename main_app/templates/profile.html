@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <h1>{{request.user.first_name}}'s Profile</h1>
+  <h1>{{profile.first_name}}'s Profile</h1>
+   <hr />
   <p>Current City: {{profile.current_city}} </p>
-    <hr />
+  <p>My Reviews: 
+  {% for review in reviews %}
+  {% comment %} <div class="card hoverable"> {% endcomment %}
+    <p>{{review.title}}</p>
 
+    {% comment %} <a href="{% url 'detail' guitar.id %}">
+    <div class="card-content hoverable red accent-4 black-text">
+      <span class="card-title white-text">{{ guitar.gtrmodel }}</span>
+      <p>Brand: {{ guitar.brand }}</p>
+      <p>Description: {{ guitar.color }}</p>
+      <p>Year: {{ guitar.year }}</p>
+    </div> {% endcomment %}
 
+   
+
+{% endfor %}
 {% endblock %}
