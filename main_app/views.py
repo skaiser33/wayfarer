@@ -37,9 +37,12 @@ def signup(request):
 def profile_setup(request):
   profile_form = ProfileForm(request.POST or None)
   if request.POST and profile_form.is_valid():
+    user = request.user
+    print(request.user.id)
+    login(request, user)
     new_profile = profile_form.save(commit=False)
     new_profile.user = request.user
-    new_profile.save()
+    new_profile.save()  
     return redirect('profile')
   else:
     return render(request, 'profile_setup.html', { 'profile_form': profile_form })
