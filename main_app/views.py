@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
+from .forms import RegisterForm
 from .models import Profile
 
 # Define the home view
@@ -19,14 +20,14 @@ def profile(request):
 def signup(request):
   error_message = ''
   if request.method == 'POST':
-    form = UserCreationForm(request.POST)
+    form = RegisterForm(request.POST)
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return rebder(request, 'profile.html')
+      return render(request, 'profile.html')
     else:
       error_message = 'Invalid sign up - try again'
-  form = UserCreationForm()
+  form = RegisterForm()
   context = {'form': form, 'error_message': error_message }
   return render(request, 'registration/signup.html', context)
 
