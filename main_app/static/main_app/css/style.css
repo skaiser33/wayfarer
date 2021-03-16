@@ -18,10 +18,10 @@ ul {
   list-style-type: none;
 }
 
-li {
+/* li {
   font-size: 2em;
   font-family: 'Ranchers', cursive;
-}
+} */
 
 h1 {
   color: rgb(16, 100, 247);
