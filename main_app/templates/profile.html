@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <h1>Your Profile</h1>
+  <h1>{{request.user.profile.first_name}}'s Profile</h1>
   <hr />
+  <p> {{request.user.profile.current_city}}</p>
 
 
 {% endblock %}
