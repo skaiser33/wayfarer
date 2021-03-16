@@ -15,7 +15,9 @@ def about(request):
 
 # Define the profile view
 def profile(request):
-  return render(request, 'profile.html')
+  profile = Profile.objects.get(user=request.user)
+  return render(request, 'profile.html', {'profile':profile})
+
 
 def signup(request):
   error_message = ''
