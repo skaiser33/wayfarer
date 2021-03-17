@@ -28,3 +28,9 @@ class Review(models.Model):
   date = models.DateField(auto_now_add=True)
   profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
   city = models.ForeignKey(City, on_delete=models.CASCADE)
+
+  def __str__(self):
+      return self.title
+
+  class Meta:
+    ordering = ['-date']

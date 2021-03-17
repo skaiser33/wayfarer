@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Cities</h1>
+
+{% for city in cities %}
+    {% comment %} <div class="review-card"> {% endcomment %}
+    <div class="card">
+    <div class="card-body">
+    <a class="review-title" href="{% url 'cities_detail' city.id %}">{{city.name}}</a>
+    </div>
+    </div>
+    <br>
+
+{% endfor %}
+{% endblock %}
