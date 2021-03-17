@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 # from .forms import RegisterForm
 from .forms import ProfileForm
@@ -47,4 +48,7 @@ def profile_setup(request):
   else:
     return render(request, 'profile_setup.html', { 'profile_form': profile_form })
 
-# wayfarer
+def reviews_detail(request, review_id):
+  review = Review.objects.get(id=review_id)
+  profile = Profile.objects.get(id=review.profile_id)
+  return render(request, 'user_reviews/detail.html', {'review':review, 'profile':profile })
