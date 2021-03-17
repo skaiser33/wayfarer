@@ -128,9 +128,13 @@ p {
   font-style: italic;
 }
 
-/* .card-img-top {
-  
-} */
+.col-sm-7, .col-sm-5 {
+  background-color: rgb(16, 100, 247);
+}
+
+.bio {
+  font-size: 1em;
+}
 
 /* IF NEEDED TO OVERRIR BOOTSTRAP SWITCH FROM content-box to border-box */
 /* .selector-for-some-widget {
