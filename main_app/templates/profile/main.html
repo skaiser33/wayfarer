@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <h1>{{profile.first_name}}'s Profile</h1>
+  <h1>{{profile.first_name }} {{ profile.last_name}}'s Profile</h1>
    <hr />
   
   <p>Member since {{profile.user.date_joined}} </p>
@@ -12,10 +12,14 @@
   <br>
   <h2>My Reviews: </h2>
   {% for review in reviews %}
-    <div class="review-card">
+    {% comment %} <div class="review-card"> {% endcomment %}
+    <div class="card">
+      <div class="card-body">
       <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
       <p>{{review.date}}</p>
     </div>
+    </div>
+    <br>
 {% endfor %}
 
 {% endblock %}
