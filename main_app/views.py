@@ -60,14 +60,14 @@ def profiles_edit(request, profile_id):
     return render(request, 'profile/edit.html', { 'profile': profile, 'profile_form': profile_form })
 
 # Define the reviews index view
-@login_required
+# @login_required
 def reviews_index(request):
   profile = Profile.objects.get(user=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
   return render(request, 'reviews/user_reviews/index.html', { 'reviews': reviews})    
 
 # Define the reviews detail view
-@login_required
+# @login_required
 def reviews_detail(request, review_id):
   review = Review.objects.get(id=review_id)
   profile = Profile.objects.get(id=review.profile_id)
@@ -76,13 +76,12 @@ def reviews_detail(request, review_id):
 def reviews_new(request, city_id):
   review_form = ReviewForm(request.POST or None)
   profile = Profile.objects.get(user=request.user)
-  city = City.objects.get(id=city_id)
   if request.POST and review_form.is_valid():
     new_review = review_form.save(commit=False)
-    new_review.city_id = city.id
+    new_review.city_id = city_id
     new_review.profile_id = profile.id
     new_review.save()
-    return redirect(request, 'cities_detail', city_id=city.id)
+    return redirect(request, 'cities_detail', city_id=city_id)
   else:
     return render(request, 'reviews/new.html', {'review_form':review_form})
 
@@ -96,3 +95,8 @@ def cities_detail(request, city_id):
   city = City.objects.get(id=city_id)
   reviews = Review.objects.filter(city_id=city_id)
   return render(request, 'cities/detail.html', {'reviews':reviews, 'city':city})
+
+# STYLING TEST ONLY for cities pageDefine the about view
+def cities_test(request):
+  return render(request, 'cities_test.html')
+  return render(request, 'reviews/user_reviews/detail.html', {'review':review, 'profile':profile })

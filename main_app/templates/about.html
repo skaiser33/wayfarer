@@ -1,8 +1,69 @@
 {% extends 'base.html' %}
 {% block content %}
 
-  <h1>About Wayfarer</h1>
+  <h1>Wayfarer is...</h1>
   <hr />
-  <p>Explore Wayfarer!</p>
+  <div class="container">
+    <div class="card-deck">
+      <div class="card">
+        <img class="card-img-top" src="https://i.imgur.com/YsiM4HH.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">AN    INSPIRATION</h5>
+          <p class="card-text">Feeling stuck? Find and plan your next travel destination with insightful posts from our discerning wayfarers. </p>
+          {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://i.imgur.com/oTXmPQV.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">A    JOURNEY</h5>
+          <p class="card-text">Off in a strange land and unsure which fork to take? City-specific guidance will help you make the most of your trip, wherever you are.</p>
+          {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+        </div>
+      </div>
+      <div class="card">
+        <img class="card-img-top" src="https://i.imgur.com/JcqKupX.jpg" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">A   SOUVENIR</h5>
+          <p class="card-text">Nostalgic for your last amazing trip? Relive those moments by posting  memories and photos (or live vicariously through someone else's!). </p>
+          {% comment %} <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
 
+ <div class="container bcontent">
+        <h2>Created By...</h2>
+        <hr />
+        <div class="card-deck">
+        <div class="card" style="width: 500px;">
+            <div class="row no-gutters">
+                <div class="col-sm-5">
+                    <img class="card-img" src="https://i.imgur.com/GKMIgm4.png" alt="Carmen Lopez photo">
+                </div>
+                <div class="col-sm-7">
+                    <div class="card-body">
+                        <h5 class="card-title">Carmen Lopez</h5>
+                        <p class="card-text bio">Carmen is passionate about mission driven companies that  help humans get ahead. Her background is in fashion and it shows.
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card" style="width: 500px;">
+            <div class="row no-gutters">
+                <div class="col-sm-5">
+                    <img class="card-img" src="https://i.imgur.com/p0xHO7h.jpg" alt="Steven Kaiser photo">
+                </div>
+                <div class="col-sm-7">
+                    <div class="card-body">
+                        <h5 class="card-title">Steven Kaiser</h5>
+                        <p class="card-text bio">Steven is a music fanatic and travel junkie who would move to Paris or Montreal in a heartbeat if his French weren't so bad.
+</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
