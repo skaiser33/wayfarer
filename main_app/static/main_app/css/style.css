@@ -18,16 +18,25 @@ ul {
   list-style-type: none;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Ranchers', cursive;
+}
+
 h1 {
   color: rgb(16, 100, 247);
   font-size: 5em;
-  font-family: 'Ranchers', cursive;
 } 
 
 h2 {
   color: rgb(16, 100, 247);
   font-size: 4em;
-  font-family: 'Ranchers', cursive;
+  /* font-family: 'Ranchers', cursive; */
+} 
+
+h5 {
+  font-size: 2em;
+  white-space: pre;
+  /* font-family: 'Ranchers', cursive; */
 } 
 
 main {
@@ -50,7 +59,7 @@ p {
 
 .nav-item, .navbar-nav {
   font-family: 'Ranchers', cursive;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .btn-outline-success {
@@ -87,15 +96,27 @@ p {
   margin-right: 10px;
 }
 
+.card{
+  border: 5px solid white;
+}
+
 .card-body {
   background-color: rgb(16, 100, 247);
-  color: white;
+  color: rgb(150,216,245);
 }
 
 .review-title {
   font-size: 40px;
   color: white;
 }
+
+.cities-list {
+  font-family: 'Ranchers', cursive;
+}
+
+/* .card-img-top {
+  
+} */
 
 /* IF NEEDED TO OVERRIR BOOTSTRAP SWITCH FROM content-box to border-box */
 /* .selector-for-some-widget {

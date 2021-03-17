@@ -69,3 +69,7 @@ def reviews_detail(request, review_id):
   review = Review.objects.get(id=review_id)
   profile = Profile.objects.get(id=review.profile_id)
   return render(request, 'user_reviews/detail.html', {'review':review, 'profile':profile })
+
+# STYLING TEST ONLY for cities pageDefine the about view
+def cities_test(request):
+  return render(request, 'cities_test.html')
