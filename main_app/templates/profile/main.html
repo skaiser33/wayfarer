@@ -10,8 +10,10 @@
     <input type="submit" class="btn btn-primary" value="Edit Profile" />
   </form>
   <br>
+  {% comment %} {% if len(reviews) > 0 %} {% endcomment %}
+  {% if reviews %}
   <h2>My Reviews: </h2>
-  {% for review in reviews %}
+    {% for review in reviews %}
     <div class="card">
       <div class="card-body">
         <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
@@ -19,7 +21,13 @@
       </div>
     </div>
     <br>
-
-{% endfor %}
-
+    {% endfor %}
+  {% else %}  
+    <div class="card">
+    <div class="card-body">
+      <h5>Once you write some reviews, you can find them here!</h5>
+      <p>Head over to <a class="review-title pizza" href="{% url 'cities_index' %}">Cities</a> and read reviews from our other wayfarers or add your own!</p>
+    </div>
+    </div>
+  {% endif %}
 {% endblock %}

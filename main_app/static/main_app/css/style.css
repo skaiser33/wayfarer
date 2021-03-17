@@ -110,6 +110,12 @@ p {
   color: white;
 }
 
+.pizza {
+  font-size: 30px;
+  font-weight: bold;
+  color: white;
+}
+
 .cities-list {
   font-family: 'Ranchers', cursive;
 }
