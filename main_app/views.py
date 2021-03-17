@@ -54,7 +54,7 @@ def profiles_edit(request, profile_id):
   profile_form = ProfileForm(request.POST or None, instance=profile)
   if request.POST and profile_form.is_valid():
     profile_form.save()
-    return redirect('detail', profile_id=profile_id)
+    return redirect('profile')
   else:
     return render(request, 'profile/edit.html', { 'profile': profile, 'profile_form': profile_form })
 

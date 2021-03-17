@@ -4,18 +4,22 @@
   <h1>{{profile.first_name}}'s Profile</h1>
    <hr />
   
-  <p>Member since {{profile.user.date_joined}} </p>
-  <p>Current City: {{profile.current_city}} </p>
+  <p class="profile-info">Member since {{profile.user.date_joined}} </p>
+  <p class="profile-info">Current City: {{profile.current_city}} </p>
   <form action="{% url 'edit_profile' profile.id %}">
-    <input type="submit" class="btn" value="Edit Profile" />
+    <input type="submit" class="btn btn-primary" value="Edit Profile" />
   </form>
   <br>
   <h2>My Reviews: </h2>
   {% for review in reviews %}
-    <div class="review-card">
-      <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
-      <p>{{review.date}}</p>
+    <div class="card">
+      <div class="card-body">
+        <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
+        <p>{{review.date}}</p>
+      </div>
     </div>
+    <br>
+
 {% endfor %}
 
 {% endblock %}

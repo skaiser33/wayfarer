@@ -29,12 +29,11 @@ h1 {
   font-family: 'Ranchers', cursive;
 } 
 
-/* h2 font adjustment not functional */
-/* h2 {
+h2 {
   color: rgb(16, 100, 247);
   font-size: 4em;
   font-family: 'Ranchers', cursive;
-}  */
+}
 
 main {
   flex: 1 0 auto;
@@ -71,6 +70,18 @@ p {
   border-color:white;
 } 
 
+.btn-primary {
+  color: white;
+  background-color:rgb(16, 100, 247);
+  border-color:white;
+}
+
+.btn-primary:hover {
+  color:rgb(16, 100, 247);
+  background-color: rgb(150,216,245);
+  border-color:white;
+}
+
 .navbar-nav > li{
   margin-left: 10px;
   margin-right: 10px;
@@ -81,9 +92,14 @@ p {
   margin-right: 10px;
 }
 
-/* font size adjustment not working */
+.card-body {
+  background-color: rgb(16, 100, 247);
+  color: white;
+}
+
 .review-title {
-  font-size: 100px;
+  font-size: 40px;
+  color: white;
 }
 
 /* IF NEEDED TO OVERRIR BOOTSTRAP SWITCH FROM content-box to border-box */
