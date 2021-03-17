@@ -18,11 +18,6 @@ ul {
   list-style-type: none;
 }
 
-/* li {
-  font-size: 2em;
-  font-family: 'Ranchers', cursive;
-} */
-
 h1 {
   color: rgb(16, 100, 247);
   font-size: 5em;
@@ -33,7 +28,7 @@ h2 {
   color: rgb(16, 100, 247);
   font-size: 4em;
   font-family: 'Ranchers', cursive;
-}
+} 
 
 main {
   flex: 1 0 auto;
