@@ -19,7 +19,7 @@ def about(request):
 def profile(request):
   profile = Profile.objects.get(user=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
-  return render(request, 'profile.html', {'profile':profile, 'reviews':reviews})
+  return render(request, 'profile/main.html', {'profile':profile, 'reviews':reviews})
 
 def signup(request):
   error_message = ''
