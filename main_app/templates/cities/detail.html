@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ city.name }}</h1>
+<img src="{{ city.image }}">
+{% for review in reviews %}
+    {% comment %} <div class="review-card"> {% endcomment %}
+    <div class="card">
+        <div class="card-body">
+            <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
+            <p>{{review.date}}</p>
+        </div>
+    </div>
+    <br>
+
+{% endfor %}
+
+
+
+{% endblock %}
