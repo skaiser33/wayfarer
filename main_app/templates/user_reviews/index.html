@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>My Reviews</h1>
+
+{% for review in reviews %}
+  <div class="review-card">
+    <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
+    <p>{{review.date}}</p>
+  </div>
+  
+{% endfor %}
+{% endblock %}

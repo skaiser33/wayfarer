@@ -74,6 +74,10 @@ p {
   margin-right: 10px;
 }
 
+/* font size adjustment not working */
+.review-title {
+  font-size: 100px;
+}
 
 /* IF NEEDED TO OVERRIR BOOTSTRAP SWITCH FROM content-box to border-box */
 /* .selector-for-some-widget {

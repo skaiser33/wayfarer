@@ -48,6 +48,13 @@ def profile_setup(request):
   else:
     return render(request, 'profile_setup.html', { 'profile_form': profile_form })
 
+# Define the reviews index view
+def reviews_index(request):
+  profile = Profile.objects.get(user=request.user)
+  reviews = Review.objects.filter(profile_id=profile.id)
+  return render(request, 'user_reviews/index.html', { 'reviews': reviews})    
+
+# Define the reviews detail view
 def reviews_detail(request, review_id):
   review = Review.objects.get(id=review_id)
   profile = Profile.objects.get(id=review.profile_id)
