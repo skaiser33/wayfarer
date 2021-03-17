@@ -19,7 +19,7 @@ def about(request):
 def profile(request):
   profile = Profile.objects.get(user=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
-  return render(request, 'profile.html', {'profile':profile, 'reviews':reviews})
+  return render(request, 'profile/main.html', {'profile':profile, 'reviews':reviews})
 
 def signup(request):
   error_message = ''
@@ -48,6 +48,23 @@ def profile_setup(request):
   else:
     return render(request, 'profile_setup.html', { 'profile_form': profile_form })
 
+# Define the view to edit profile
+def profiles_edit(request, profile_id):
+  profile = Profile.objects.get(id=profile_id)
+  profile_form = ProfileForm(request.POST or None, instance=profile)
+  if request.POST and profile_form.is_valid():
+    profile_form.save()
+    return redirect('detail', profile_id=profile_id)
+  else:
+    return render(request, 'profile/edit.html', { 'profile': profile, 'profile_form': profile_form })
+
+# Define the reviews index view
+def reviews_index(request):
+  profile = Profile.objects.get(user=request.user)
+  reviews = Review.objects.filter(profile_id=profile.id)
+  return render(request, 'user_reviews/index.html', { 'reviews': reviews})    
+
+# Define the reviews detail view
 def reviews_detail(request, review_id):
   review = Review.objects.get(id=review_id)
   profile = Profile.objects.get(id=review.profile_id)

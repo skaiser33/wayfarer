@@ -29,6 +29,13 @@ h1 {
   font-family: 'Ranchers', cursive;
 } 
 
+/* h2 font adjustment not functional */
+/* h2 {
+  color: rgb(16, 100, 247);
+  font-size: 4em;
+  font-family: 'Ranchers', cursive;
+}  */
+
 main {
   flex: 1 0 auto;
 }
@@ -74,6 +81,10 @@ p {
   margin-right: 10px;
 }
 
+/* font size adjustment not working */
+.review-title {
+  font-size: 100px;
+}
 
 /* IF NEEDED TO OVERRIR BOOTSTRAP SWITCH FROM content-box to border-box */
 /* .selector-for-some-widget {
