@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
-
-<h1>My Reviews</h1>
-
-{% for review in reviews %}
-  {% comment %} <div class="review-card"> {% endcomment %}
-  <div class="card">
-    <div class="card-body">
-      <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
-      <p>{{review.date}}</p>
-    </div>  
-  </div>
-  <br>
-  
-{% endfor %}
+  {% if reviews %}
+    <h1>My Reviews</h1>
+    {% for review in reviews %}
+      <div class="card">
+        <div class="card-body">
+          <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
+          <p>{{review.date}}</p>
+        </div>  
+      </div>
+      <br>
+    {% endfor %}
+  {% else %}
+    <div class="card">
+      <div class="card-body">
+        <h5>Once you write some reviews, you can find them here.</h5>
+        <p>For now, head over to <a class="cities-anchor" href="{% url 'cities_index' %}">Cities</a> and read reviews from our other wayfarers or add your own!</p>
+      </div>
+    </div>
+  {% endif %}
 {% endblock %}

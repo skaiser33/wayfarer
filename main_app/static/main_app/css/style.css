@@ -98,6 +98,7 @@ p {
 
 .card{
   border: 5px solid white;
+  margin-top: 2%;
 }
 
 .card-body {
@@ -110,7 +111,7 @@ p {
   color: white;
 }
 
-.pizza {
+.cities-anchor {
   font-size: 30px;
   font-weight: bold;
   color: white;
@@ -118,6 +119,13 @@ p {
 
 .cities-list {
   font-family: 'Ranchers', cursive;
+}
+
+.profile-info {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgb(16, 100, 247);
+  font-style: italic;
 }
 
 /* .card-img-top {
