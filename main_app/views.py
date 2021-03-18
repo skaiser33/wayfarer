@@ -49,7 +49,7 @@ def profile_setup(request):
     return render(request, 'profile_setup.html', { 'profile_form': profile_form })
 
 # Define the view to edit profile
-@login_required
+# @login_required
 def profiles_edit(request, profile_id):
   profile = Profile.objects.get(id=profile_id)
   profile_form = ProfileForm(request.POST or None, instance=profile)
@@ -101,7 +101,7 @@ def reviews_edit(request, review_id):
 # @login_required
 def reviews_delete(request, review_id):
   Review.objects.get(id=review_id).delete()
-  return redirect('index')         
+  return redirect('profile')         
 
 #Define the cities index view
 def cities_index(request):
