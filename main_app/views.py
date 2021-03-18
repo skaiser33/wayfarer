@@ -113,6 +113,10 @@ def cities_detail(request, city_id):
   city = City.objects.get(id=city_id)
   reviews = Review.objects.filter(city_id=city_id)
   return render(request, 'cities/detail.html', {'reviews':reviews, 'city':city})
+# def cities_detail(request, city_name):
+#   city = City.objects.get(name=city_name)
+#   reviews = Review.objects.filter(city_id=city_id)
+#   return render(request, 'cities/detail.html', {'reviews':reviews, 'city':city})
 
 # STYLING TEST ONLY for cities pageDefine the about view
 def cities_test(request):

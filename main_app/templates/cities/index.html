@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
 <h1>Cities</h1>
@@ -8,6 +9,7 @@
     <div class="card">
     <div class="card-body">
     <a class="review-title city-index" href="{% url 'cities_detail' city.id %}">{{city.name}}</a>
+    {% comment %} <a class="review-title city-index" href="{% url 'cities_detail' city.name|urlencode %}">{{city.name}}</a> {% endcomment %}
     </div>
     </div>
     <br>

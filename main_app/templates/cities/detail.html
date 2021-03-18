@@ -17,7 +17,9 @@
     <div class="card">
         <div class="card-body">
             <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
-            <p>{{review.date}}</p>
+            <p class="review-date"><em>{{review.date}}</em></p>
+            <p class="text-truncate content-preview">{{review.content}}</p>
+
         </div>
     </div>
     <br>
