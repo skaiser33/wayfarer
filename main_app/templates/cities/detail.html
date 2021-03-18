@@ -2,7 +2,8 @@
 {% block content %}
 
 <h1>{{ city.name }}</h1>
-<img src="{{ city.image }}">
+
+<img class="city-img" src="{{ city.image }}">
 
 {% comment %} <p><a href="{% url 'new_review' city.id %}">Add a New Post</a></p> {% endcomment %}
 
