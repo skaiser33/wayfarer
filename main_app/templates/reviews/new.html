@@ -5,6 +5,6 @@
   <form method="POST" action="{% url 'new_review' city_id %}">
       {% csrf_token %}
       {{ review_form.as_p }}
-      <input type="submit" class="btn" value="Add Review">
+      <input type="submit" class="btn btn-primary" value="Add Review">
   </form>  
 {% endblock content %}

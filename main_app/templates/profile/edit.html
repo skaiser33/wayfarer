@@ -10,7 +10,7 @@
 <form method="post" action="{% url 'edit_profile' profile.id %}">
   {% csrf_token %}
   {{ profile_form.as_p }}
-  <input type="submit" class="btn" value="Submit">
+  <input type="submit" class="btn btn-primary" value="Submit">
 </form> 
 
 {% endblock %}

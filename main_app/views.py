@@ -73,6 +73,7 @@ def reviews_detail(request, review_id):
   profile = Profile.objects.get(id=review.profile_id)
   return render(request, 'reviews/user_reviews/detail.html', {'review':review, 'profile':profile })
 
+# Define the new review view
 def reviews_new(request, city_id):
   review_form = ReviewForm(request.POST or None)
   profile = Profile.objects.get(user_id=request.user)
@@ -84,6 +85,23 @@ def reviews_new(request, city_id):
     return redirect('cities_detail', city_id=city_id)
   else:
     return render(request, 'reviews/new.html', {'review_form':review_form, 'city_id':city_id})
+
+# Define the edit review view
+# @login_required
+def reviews_edit(request, review_id):
+  review = Review.objects.get(id=review_id)
+  review_form = ReviewForm(request.POST or None, instance=review)
+  if request.POST and review_form.is_valid():
+    review_form.save()
+    return redirect('detail', review_id=review_id)
+  else:
+    return render(request, 'reviews/edit.html', { 'review': review, 'review_form': review_form })   
+
+# Define the delete review view
+# @login_required
+def reviews_delete(request, review_id):
+  Review.objects.get(id=review_id).delete()
+  return redirect('index')         
 
 #Define the cities index view
 def cities_index(request):
