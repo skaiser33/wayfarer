@@ -5,13 +5,14 @@
   <p>Author: {{ profile.first_name }} {{ profile.last_name }}</p>
   <p> {{ review.date }} </p>
   <p> {{ review.content }} </p>
-  <form action="{% url 'edit' review.id %}">
-    <input type="submit" class="btn btn-primary" value="Edit Review" />
-  </form>
-  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-    Delete Review
-  </button>
-
+  <div class="btn-group" role="group" aria-label="Basic example">
+    <form action="{% url 'edit' review.id %}">
+      <input type="submit" class="d-inline-block btn btn-primary" value="Edit Review" />
+    </form>
+    <button type="button" class="d-inline-block btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+      Delete Review
+    </button>
+  </div>
   <!-- Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

@@ -1,10 +1,12 @@
 {% extends 'base.html' %}
+{%load crispy_forms_tags %} 
 {% block content %}
   <h1>Edit Your Review</h1>
 
-  <form method="POST" action="{% url 'edit' review.id %}">
+  <form class="edit-form" method="POST" action="{% url 'edit' review.id %}">
     {% csrf_token %}
-    {{ review_form.as_p }}
-    <input type="submit" class="btn" value="Submit Update">
+    {% comment %} {{ review_form|crispy.as_p }} {% endcomment %}
+    {{ review_form|crispy }}
+    <input type="submit" class="btn btn-primary" value="Submit Update">
   </form>
 {% endblock content %}

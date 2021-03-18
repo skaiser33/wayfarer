@@ -62,9 +62,23 @@ p {
   font-size: 1.3em;
 }
 
-/* .btn {
-  margin-top: 100px;
-} */
+label {
+  font-family: 'Ranchers', cursive;
+  font-size: 1.3em;
+}
+
+input {
+  max-width: 20em;
+}
+
+.textinput, .textarea  {
+  font-size: 1.5em;
+}
+
+.btn {
+  display:inline-block;
+  margin: 10px;
+}
 
 .btn-outline-success {
   color:white;
@@ -138,6 +152,10 @@ p {
 
 .bio {
   font-size: 1em;
+}
+
+.edit-form {
+
 }
 
 /* IF NEEDED TO OVERRIR BOOTSTRAP SWITCH FROM content-box to border-box */
