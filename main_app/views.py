@@ -81,9 +81,9 @@ def profiles_edit(request, profile_id):
 # Define the reviews index view
 # @login_required
 def reviews_index(request):
-  profile = Profile.objects.get(user=request.user)
+  profile = Profile.objects.get(user_id=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
-  return render(request, 'reviews/user_reviews/index.html', { 'reviews': reviews})    
+  return render(request, 'reviews/user_reviews/index.html', { 'reviews': reviews, 'profile':profile })    
 
 # Define the reviews detail view
 # @login_required
@@ -131,7 +131,8 @@ def cities_index(request):
 def cities_detail(request, city_id):
   city = City.objects.get(id=city_id)
   reviews = Review.objects.filter(city_id=city_id)
-  return render(request, 'cities/detail.html', {'reviews':reviews, 'city':city})
+  profiles = Profile.objects.all()
+  return render(request, 'cities/detail.html', {'reviews':reviews, 'city':city, 'profiles':profiles })
 # def cities_detail(request, city_name):
 #   city = City.objects.get(name=city_name)
 #   reviews = Review.objects.filter(city_id=city_id)
