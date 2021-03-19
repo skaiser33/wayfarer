@@ -1,5 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>Welcome To Wayfarer</h1>
+  <h1 class="center">Welcome To Wayfarer</h1>
   <hr />
+    <div class="container">
+    {% comment %} <div class="card-deck"> {% endcomment %}
+    <div class="card home-card mx-auto">
+      <h5 class="card-header center text-wrap text-break" id="heading'.$collapseID.'">A city-centric review site for discerning travelers.</h5>
+      <div class="card-body">
+        <h5 class="card-title center collapsed">Where will life take you?</h5>
+        <p class="card-text center text-wrap">No matter the answer, Wayfarer has you covered.</p>
+        {% comment %} <a class="btn btn-outline-success center" href="{% url 'cities_index' %}" >Choose A City</a> {% endcomment %}
+        <form class="center" action="{% url 'cities_index' %}">
+          <input type="submit" class="btn btn-outline-success" value="CHOOSE      A     CITY" />
+        </form>
+      </div>
+    </div>
+      
+    {% comment %} </div> {% endcomment %}
+  </div>
+  
+  <div class="container">
+  </div>
+  
+  <div class="container">
+  </div>
+  
 {% endblock %}

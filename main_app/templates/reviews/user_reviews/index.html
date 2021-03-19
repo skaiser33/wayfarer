@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% if reviews %}
+    <h1>My Reviews</h1>
+    {% for review in reviews %}
+      <div class="card">
+        <div class="card-body">
+        {% if profile.photo.url %}
+          <img class="profile-picture" src="{{ profile.photo.url }}" alt="{{profile.first_name}} {{ profile.last_name}} profile photo">
+        {% else %}
+          <img class="profile-picture" src="../static/main_app/images/default_profile_picture.jpeg" alt="Wayfarer default profile picture">
+        {% endif %}
+          <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
+          <p>{{review.date}}</p>
+        </div>  
+      </div>
+      <br>
+    {% endfor %}
+  {% else %}
+    <div class="card">
+      <div class="card-body">
+        <h5>Once you write some reviews, you can find them here.</h5>
+        <p>For now, head over to <a class="cities-anchor" href="{% url 'cities_index' %}">Cities</a> and read reviews from our other wayfarers or add your own!</p>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}
