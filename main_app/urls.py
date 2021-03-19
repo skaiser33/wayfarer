@@ -8,6 +8,7 @@ urlpatterns = [
   path('accounts/signup/', views.signup, name='signup'),
   path('profile_setup/', views.profile_setup, name='profile_setup'),
   path('profile/<int:profile_id>/edit/', views.profiles_edit, name="edit_profile"),
+  path('profile/<int:profile_id>/add_photo/', views.add_photo, name='add_photo'),
   path('reviews/', views.reviews_index, name='index'),
   path('reviews/new/cities/<int:city_id>/', views.reviews_new, name='new_review'),
   path('reviews/<int:review_id>/edit/', views.reviews_edit, name="edit"),
