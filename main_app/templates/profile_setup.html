@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{%load crispy_forms_tags %} 
 {% block content %}
 
 <h1>Profile Setup</h1>
@@ -9,7 +10,8 @@
 
 <form method="post" action="{% url 'profile_setup' %}">
   {% csrf_token %}
-  {{ profile_form.as_p }}
+  {% comment %} {{ profile_form.as_p }} {% endcomment %}
+  {{ profile_form|crispy }}
   <input type="submit" class="btn" value="Submit">
 </form> 
 
