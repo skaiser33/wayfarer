@@ -3,6 +3,21 @@
 
   <h1>{{profile.first_name }} {{ profile.last_name}}'s Profile</h1>
   <hr />
+
+  {% if profile.photo.url %}
+    <img class="profile-picture" src="{{ profile.photo.url }}" alt="{{profile.first_name}} {{ profile.last_name}} profile photo">
+  {% else %}
+
+    <img class="profile-picture" src="../static/main_app/images/default_profile_picture.jpeg" alt="Wayfarer default profile picture">
+
+    <form action="{% url 'add_photo' profile.id %}" enctype="multipart/form-data" method="POST">
+      {% csrf_token %}
+      <input type="file" name="photo-file">
+      <br><br>
+      <input type="submit" class="btn" value="Add Profile Picture">
+    </form>
+
+  {% endif %}
   
   <p class="profile-info">Wayfarer since {{profile.user.date_joined|date:'M d, Y'}}</p>
   <p class="profile-info">Current City: {{profile.current_city}} </p>
