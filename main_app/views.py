@@ -3,10 +3,12 @@ from django.http import HttpResponse
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
+from django.db.models import Count
 # from .forms import RegisterForm
 from .forms import ProfileForm, ReviewForm
 from .models import Profile, Review, City, Photo
 import uuid
+import os
 import boto3
 
 S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com'
@@ -38,6 +40,7 @@ def about(request):
 def profile(request):
   profile = Profile.objects.get(user=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
+  # reviews = Review.objects.filter(profile_id=profile.id).order_by('date')
   return render(request, 'profile/main.html', {'profile':profile, 'reviews':reviews})
 
 def signup(request):
@@ -124,7 +127,8 @@ def reviews_delete(request, review_id):
 
 #Define the cities index view
 def cities_index(request):
-  cities = City.objects.all()
+  # cities = City.objects.all()
+  cities = City.objects.annotate(num_reviews=Count('review')).order_by('-num_reviews')
   return render(request, 'cities/index.html', {'cities':cities })
 
 # Define the city details view
