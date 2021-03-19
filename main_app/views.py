@@ -131,6 +131,12 @@ def cities_index(request):
   cities = City.objects.annotate(num_reviews=Count('review')).order_by('-num_reviews')
   return render(request, 'cities/index.html', {'cities':cities })
 
+#Define the cities search view
+def cities_search(request):
+  citysearch = str(request.GET.get('citysearch'))
+  cities = City.objects.filter(name__icontains=citysearch).annotate(num_reviews=Count('review')).order_by('-num_reviews')
+  return render(request, 'cities/index.html', {'cities':cities })
+
 # Define the city details view
 def cities_detail(request, city_id):
   city = City.objects.get(id=city_id)
