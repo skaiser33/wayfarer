@@ -5,7 +5,6 @@
 
   <form class="edit-form" method="POST" action="{% url 'edit' review.id %}">
     {% csrf_token %}
-    {% comment %} {{ review_form|crispy.as_p }} {% endcomment %}
     {{ review_form|crispy }}
     <input type="submit" class="btn btn-primary" value="Submit Update">
   </form>

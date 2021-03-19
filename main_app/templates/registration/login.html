@@ -6,8 +6,8 @@
 <form method="post" action="{% url 'login' %}">
     {% csrf_token %}
     {{form|crispy}}
-    {% comment %} {{ form.as_p }} {% endcomment %}
-    <input type="submit" class="btn" value="login">
+
+    <input type="submit" class="btn btn-primary" value="Log In">
     <input type="hidden" name="next" value="{{next}}"
 </form>
 

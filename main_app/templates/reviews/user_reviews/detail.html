@@ -11,12 +11,14 @@
   <div class="btn-group" role="group" aria-label="Basic example">
     <form action="{% url 'edit' review.id %}">
       <input type="submit" class="d-inline-block btn btn-primary" value="Edit Review" />
-    </form>
+    </form> 
     <button type="button" class="d-inline-block btn btn-danger" data-toggle="modal" data-target="#deleteModal">
       Delete Review
     </button>
   </div>
-  <!-- Modal -->
+  
+  <!-- Modals -->
+  
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
