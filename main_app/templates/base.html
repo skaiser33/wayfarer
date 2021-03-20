@@ -11,7 +11,7 @@
   <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
   {% comment %} FONTS {% endcomment %}
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Ranchers&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab&family=Ranchers&family=Syne+Mono&display=swap" rel="stylesheet">
   {% comment %} BOOTSTRAP {% endcomment %}
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   {% comment %} CUSTOM CSS {% endcomment %}
@@ -21,14 +21,14 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     {% comment %} <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"> {% endcomment %}
-    <div class="w-100 order-1 order-md-0">
+    <div class="row align-items-center nw-100 order-1 order-md-0">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <a class="navbar-brand" href="/">&nbsp;&nbsp;WAYFARER</a>
         </li>
       </ul>
     </div>
-    <div class="mx-auto order-0">
+    <div class="mx-left order-1">
       {% comment %} <a class="navbar-brand mx-auto" href="#">Navbar 2</a> {% endcomment %}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
         <span class="navbar-toggler-icon"></span>
@@ -52,8 +52,10 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
-          <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'cities_search'%}">
-            <input class="form-control mr-sm-2" type="search" id="citysearch" name="citysearch" placeholder="Enter City" aria-label="Search">
+          <form class="form-inline custom-form" method="get" action="{% url 'cities_search'%}">
+            <input class="form-control" type="search" id="citysearch" name="citysearch" placeholder="Enter City" aria-label="Search">
+          {% comment %} <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'cities_search'%}">
+            <input class="form-control mr-sm-2" type="search" id="citysearch" name="citysearch" placeholder="Enter City" aria-label="Search"> {% endcomment %}
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         {% else %}  

@@ -81,8 +81,13 @@ input {
 }
 
 .btn {
+  font-family: 'Syne Mono', monospace;
   display:inline-block;
-  margin: 10px;
+  margin:10px;
+}
+
+.form-control-file {
+  margin-left: 0;
 }
 
 .btn-outline-success {
@@ -102,13 +107,13 @@ input {
 .btn-primary {
   color: white;
   background-color:rgb(16, 100, 247);
-  /* border-color:white; */
+  border:2px solid white;;
 }
 
 .btn-primary:hover {
   color:rgb(16, 100, 247);
   background-color: rgb(150,216,245);
-  border-color:white;
+  border:2px solid white;;
 }
 
 .navbar-nav > li{
@@ -218,18 +223,23 @@ a:hover {
   border-radius: 5%;
 }
 
+/* .navbar-toggler {
+  margin-bottom: 100px;
+} */
+
 /*
 ####################################################
 M E D I A  Q U E R I E S
 ####################################################
- 
+
+
+
 Extra small devices (portrait phones, less than 544px) 
 No media query since this is the default in Bootstrap because it is "mobile first"
 */
 h1 {font-size:3rem;}
 h5 {font-size:1rem;} /*1rem = 16px*/
 .review-title {font-size: 1.3em}
-
 /*
 ::::::::::::::::::::::::::::::::::::::::::::::::::::
 Bootstrap 4 breakpoints
@@ -246,8 +256,8 @@ Bootstrap 4 breakpoints
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media (min-width: 768px) {  
   h1 {font-size:3rem;}  
-  h5 {font-size:1.5rem;} /*1rem = 16px*/
-   /*1rem = 16px*/
+  h5 {font-size:1.5rem;}  
+
 }
 
 /* Large devices (desktops, 992px and up) */
