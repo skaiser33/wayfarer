@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
 
+<div class="row justify-content-center">
 <h1>{{ city.name }}</h1>
+</div>
 
-<img class="city-img" src="{{ city.image }}">
+<div class="row">
+    {% comment %} <div class="span4"></div> {% endcomment %}
+<img class="city-img center-block" src="{{ city.image }}">
+</div>
 
 {% comment %} <p><a href="{% url 'new_review' city.id %}">Add a New Post</a></p> {% endcomment %}
-
+<div class="row justify-content-center">
 <form action="{% url 'new_review' city.id %}">
   <input type="submit" class="btn btn-primary" value="Add A New Review for {{city.name}}" />
 </form>
-
+</div>
 
 {% for review in reviews %}
     {% comment %} <div class="review-card"> {% endcomment %}
