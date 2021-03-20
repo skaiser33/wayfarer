@@ -79,12 +79,15 @@ Developer Wireframe - Profile Page
 ## Screenshots
 
 Home Page
+
 ![Home Page](https://i.imgur.com/KLYFjRQ.jpg)
 
 
 City Show Page
+
 ![City Show Page](https://i.imgur.com/93KJsY8.jpg)
 
 
 Mobile Navigation
+
 ![Mobile Navigation](https://i.imgur.com/83EFDvY.png)
