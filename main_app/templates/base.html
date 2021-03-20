@@ -20,7 +20,6 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    {% comment %} <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"> {% endcomment %}
     <div class="row align-items-center nw-100 order-1 order-md-0">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
@@ -29,7 +28,6 @@
       </ul>
     </div>
     <div class="mx-left order-1">
-      {% comment %} <a class="navbar-brand mx-auto" href="#">Navbar 2</a> {% endcomment %}
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -54,8 +52,6 @@
           </li>
           <form class="form-inline custom-form" method="get" action="{% url 'cities_search'%}">
             <input class="form-control" type="search" id="citysearch" name="citysearch" placeholder="Enter City" aria-label="Search">
-          {% comment %} <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'cities_search'%}">
-            <input class="form-control mr-sm-2" type="search" id="citysearch" name="citysearch" placeholder="Enter City" aria-label="Search"> {% endcomment %}
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         {% else %}  
@@ -64,19 +60,8 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Log In</a>
-            {% comment %} <a class="nav-link" data-toggle="modal" data-target="#loginModal" data-whatever="@getbootstrap">Log In</a> {% endcomment %}
           </li>
-        {% endif %}
-        {% comment %} <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li> {% endcomment %}
-      {% comment %} </ul> {% endcomment %}
-        
+        {% endif %} 
       </ul>
     </div>
   </nav>
@@ -89,35 +74,6 @@
   <footer>
     <div class="right">All Rights Reserved, &copy; 2021 Wayfarer &nbsp;</div>
   </footer>
-
-{% comment %} MODALS  {% endcomment %}
-{% comment %} <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="loginModalLabel">Log In</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form method="post" action="{% url 'login' %}">
-          <div class="form-group">
-          {% csrf_token %}
-          {{form|crispy}}
-          </div> {% endcomment %}
-    {% comment %} {{ form.as_p }} {% endcomment %}
-    {% comment %} <input type="submit" class="btn" value="login"> {% endcomment %}
-    {% comment %} <input type="hidden" name="next" value="{{next}}" {% endcomment %}
-{% comment %} </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Log In</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div> {% endcomment %}
 
 {% comment %} BOOTSTRAP JS  {% endcomment %}
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
