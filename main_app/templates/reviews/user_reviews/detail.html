@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="container">
+  <div class="justify-content-left">
+
     <div class="card review-card">
       <h1>{{ review.title }}</h1>
       <p>by {{ profile.first_name }} {{ profile.last_name }}</p>
@@ -16,6 +18,7 @@
       Delete Review
     </button>
   </div>
+   </div>  
   
   <!-- Modals -->
   
