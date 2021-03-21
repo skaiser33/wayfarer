@@ -1,18 +1,16 @@
 {% extends 'base.html' %}
-
 {% block content %}
 
-<h1>Cities</h1>
+  <h1>Cities</h1>
 
-{% for city in cities %}
-    {% comment %} <div class="review-card"> {% endcomment %}
+  {% for city in cities %}
     <div class="card">
-    <div class="card-body">
-    <a class="review-title city-index" href="{% url 'cities_detail' city.id %}">{{city.name}}</a>
-    {% comment %} <a class="review-title city-index" href="{% url 'cities_detail' city.name|urlencode %}">{{city.name}}</a> {% endcomment %}
-    </div>
+      <div class="card-body">
+        <img class="city-picture-small align-middle" src="{{ city.image }}">
+        <a class="review-title city-index align-middle" href="{% url 'cities_detail' city.id %}">{{city.name}}</a>
+      </div>
     </div>
     <br>
-
-{% endfor %}
+  {% endfor %}
+  
 {% endblock %}

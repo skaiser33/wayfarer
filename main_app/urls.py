@@ -17,5 +17,4 @@ urlpatterns = [
   path('cities/', views.cities_index, name='cities_index'),
   path('cities/?', views.cities_search, name='cities_search'),
   path('cities/<int:city_id>/', views.cities_detail, name='cities_detail'),
-  path('cities_test/', views.cities_test, name='cities_test'),
 ]

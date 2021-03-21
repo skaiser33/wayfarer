@@ -2,18 +2,16 @@
 {%load crispy_forms_tags %} 
 {% block content %}
 
-<h1>Profile Edit</h1>
+  <h1>Profile Edit</h1>
 
-{% if error_message %}
-    <p>{{ error_message }}</p>
-{% endif %} 
+  {% if error_message %}
+      <p>{{ error_message }}</p>
+  {% endif %} 
 
-<form method="post" action="{% url 'edit_profile' profile.id %}">
-  {% csrf_token %}
-  {% comment %} {{ profile_form.as_p }} {% endcomment %}
-  {{ profile_form|crispy }}
-  
-  <input type="submit" class="btn btn-primary" value="Submit">
-</form> 
+  <form method="post" action="{% url 'edit_profile' profile.id %}">
+    {% csrf_token %}
+    {{ profile_form|crispy }}  
+    <input type="submit" class="btn btn-primary" value="Submit">
+  </form> 
 
 {% endblock %}
