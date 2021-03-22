@@ -41,7 +41,6 @@ def about(request):
 def profile(request):
   profile = Profile.objects.get(user=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
-  # reviews = Review.objects.filter(profile_id=profile.id).order_by('date')
   return render(request, 'profile/main.html', {'profile':profile, 'reviews':reviews})
 
 # Define the signup view

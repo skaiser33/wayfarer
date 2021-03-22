@@ -13,6 +13,7 @@
       {% csrf_token %}
       <div class="form-group">
         <input class="form-control-file btn" type="file" name="photo-file">
+        <p>
         <input type="submit" class="btn btn-primary" value="Add Profile Picture">
       </div>
     </form>
@@ -26,7 +27,7 @@
     {% for review in reviews %}
       <div class="card">
         <div class="card-body">
-          <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
+          <a class="review-title profile-review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
           <p>{{review.date}}</p>
         </div>
       </div>
