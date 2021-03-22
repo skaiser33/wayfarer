@@ -3,34 +3,31 @@
 
   <h1>{{profile.first_name }} {{ profile.last_name}}'s Profile</h1>
   <hr />
-
+  <p class="profile-info">Wayfarer since {{profile.user.date_joined|date:'M d, Y'}}</p>
+  <p class="profile-info">Current City: {{profile.current_city}} </p>
   {% if profile.photo.url %}
     <img class="main-profile-picture" src="{{ profile.photo.url }}" alt="{{profile.first_name}} {{ profile.last_name}} profile photo">
   {% else %}
-
     <img class="main-profile-picture" src="../static/main_app/images/default_profile_picture.jpeg" alt="Wayfarer default profile picture">
-
     <form action="{% url 'add_photo' profile.id %}" enctype="multipart/form-data" method="POST">
       {% csrf_token %}
-      <input type="file" name="photo-file">
-      <p>
-      <input type="submit" class="btn btn-primary" value="Add Profile Picture">
+      <div class="form-group">
+        <input class="form-control-file btn" type="file" name="photo-file">
+        <p>
+        <input type="submit" class="btn btn-primary" value="Add Profile Picture">
+      </div>
     </form>
-
   {% endif %}
-  
-  <p class="profile-info">Wayfarer since {{profile.user.date_joined|date:'M d, Y'}}</p>
-  <p class="profile-info">Current City: {{profile.current_city}} </p>
   <form action="{% url 'edit_profile' profile.id %}">
     <input type="submit" class="btn btn-primary" value="Edit Profile" />
   </form>
   <br>
   {% if reviews %}
-  <h2>My Reviews: </h2>
+    <h2>My Reviews: </h2>
     {% for review in reviews %}
       <div class="card">
         <div class="card-body">
-          <a class="review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
+          <a class="review-title profile-review-title" href="{% url 'detail' review.id %}">{{review.title}}</a>
           <p>{{review.date}}</p>
         </div>
       </div>

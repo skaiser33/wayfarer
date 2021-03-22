@@ -4,7 +4,6 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Count
-# from .forms import RegisterForm
 from .forms import ProfileForm, ReviewForm
 from .models import Profile, Review, City, Photo
 import uuid
@@ -14,6 +13,7 @@ import boto3
 S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com'
 BUCKET = 'cat-collector-cl'
 
+# Define the add_photo view
 def add_photo(request, profile_id):
   photo_file = request.FILES.get('photo-file', None)
   if photo_file:
@@ -37,12 +37,13 @@ def about(request):
   return render(request, 'about.html')
 
 # Define the profile view
+@login_required
 def profile(request):
   profile = Profile.objects.get(user=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
-  # reviews = Review.objects.filter(profile_id=profile.id).order_by('date')
   return render(request, 'profile/main.html', {'profile':profile, 'reviews':reviews})
 
+# Define the signup view
 def signup(request):
   error_message = ''
   if request.method == 'POST':
@@ -57,6 +58,7 @@ def signup(request):
   context = {'form': form, 'error_message': error_message }
   return render(request, 'registration/signup.html', context)
 
+# Define the view to setup profile
 def profile_setup(request):
   profile_form = ProfileForm(request.POST or None)
   if request.POST and profile_form.is_valid():
@@ -71,7 +73,7 @@ def profile_setup(request):
     return render(request, 'profile_setup.html', { 'profile_form': profile_form })
 
 # Define the view to edit profile
-# @login_required
+@login_required
 def profiles_edit(request, profile_id):
   profile = Profile.objects.get(id=profile_id)
   profile_form = ProfileForm(request.POST or None, instance=profile)
@@ -82,20 +84,21 @@ def profiles_edit(request, profile_id):
     return render(request, 'profile/edit.html', { 'profile': profile, 'profile_form': profile_form })
 
 # Define the reviews index view
-# @login_required
+@login_required
 def reviews_index(request):
   profile = Profile.objects.get(user_id=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
   return render(request, 'reviews/user_reviews/index.html', { 'reviews': reviews, 'profile':profile })    
 
 # Define the reviews detail view
-# @login_required
+@login_required
 def reviews_detail(request, review_id):
   review = Review.objects.get(id=review_id)
   profile = Profile.objects.get(id=review.profile_id)
   return render(request, 'reviews/user_reviews/detail.html', {'review':review, 'profile':profile })
 
 # Define the new review view
+@login_required
 def reviews_new(request, city_id):
   review_form = ReviewForm(request.POST or None)
   profile = Profile.objects.get(user_id=request.user)
@@ -109,7 +112,7 @@ def reviews_new(request, city_id):
     return render(request, 'reviews/new.html', {'review_form':review_form, 'city_id':city_id})
 
 # Define the edit review view
-# @login_required
+@login_required
 def reviews_edit(request, review_id):
   review = Review.objects.get(id=review_id)
   review_form = ReviewForm(request.POST or None, instance=review)
@@ -120,7 +123,7 @@ def reviews_edit(request, review_id):
     return render(request, 'reviews/edit.html', { 'review': review, 'review_form': review_form })   
 
 # Define the delete review view
-# @login_required
+@login_required
 def reviews_delete(request, review_id):
   Review.objects.get(id=review_id).delete()
   return redirect('profile')         
@@ -143,12 +146,3 @@ def cities_detail(request, city_id):
   reviews = Review.objects.filter(city_id=city_id)
   profiles = Profile.objects.all()
   return render(request, 'cities/detail.html', {'reviews':reviews, 'city':city, 'profiles':profiles })
-# def cities_detail(request, city_name):
-#   city = City.objects.get(name=city_name)
-#   reviews = Review.objects.filter(city_id=city_id)
-#   return render(request, 'cities/detail.html', {'reviews':reviews, 'city':city})
-
-# STYLING TEST ONLY for cities pageDefine the about view
-def cities_test(request):
-  return render(request, 'cities_test.html')
-  return render(request, 'reviews/user_reviews/detail.html', {'review':review, 'profile':profile })

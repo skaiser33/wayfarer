@@ -1,29 +1,30 @@
 {% extends 'base.html' %}
 {% block content %}
   <div class="container">
-    <div class="card review-card">
-      <h1>{{ review.title }}</h1>
-      <p>by {{ profile.first_name }} {{ profile.last_name }}</p>
-      <p> {{ review.date }} </p>
-      <p> {{ review.content }} </p>
-    </div>  
-  </div>
-  <div class="btn-group" role="group" aria-label="Basic example">
-    <form action="{% url 'edit' review.id %}">
-      <input type="submit" class="d-inline-block btn btn-primary" value="Edit Review" />
-    </form> 
-    <button type="button" class="d-inline-block btn btn-danger" data-toggle="modal" data-target="#deleteModal">
-      Delete Review
-    </button>
-  </div>
+    <div class="justify-content-left">
+      <div class="card review-card">
+        <h1>{{ review.title }}</h1>
+        <p>by {{ profile.first_name }} {{ profile.last_name }}</p>
+        <p> {{ review.date }} </p>
+        <p> {{ review.content }} </p>
+      </div>  
+    </div>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <form action="{% url 'edit' review.id %}">
+        <input type="submit" class="d-inline-block btn btn-primary" value="Edit Review" />
+      </form> 
+      <button type="button" class="d-inline-block btn btn-danger" data-toggle="modal" data-target="#deleteModal">
+        Delete Review
+      </button>
+    </div>
+  </div>  
   
-  <!-- Modals -->
-  
+  <!-- Modal -->  
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+          <h5 class="modal-title" id="deleteModalLabel">Are you sure?</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>

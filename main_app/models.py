@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import date
 
-# Create your models here.
 class Profile(models.Model):
   first_name = models.CharField(max_length=100)
   last_name = models.CharField(max_length=100)
@@ -22,6 +21,7 @@ class City(models.Model):
   def __str__(self):
     return self.name
 
+
 class Review(models.Model):
   title = models.CharField(max_length=200, blank=False)
   content = models.TextField(blank=False)
@@ -34,6 +34,7 @@ class Review(models.Model):
 
   class Meta:
     ordering = ['-date']
+
 
 class Photo(models.Model):
   url = models.CharField(max_length=200)

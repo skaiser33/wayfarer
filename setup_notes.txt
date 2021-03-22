@@ -1,2 +1,0 @@
-createdb wayfarer
-python3 manage.py migrate
