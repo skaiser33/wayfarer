@@ -5,7 +5,6 @@
 
   <form method="POST" action="{% url 'new_review' city_id %}">
       {% csrf_token %}
-      {% comment %} {{ review_form.as_p }} {% endcomment %}
       {{ review_form|crispy }}
       <input type="submit" class="btn btn-primary" value="Add Review">
   </form>  

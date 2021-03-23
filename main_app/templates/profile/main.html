@@ -11,8 +11,9 @@
     <img class="main-profile-picture" src="../static/main_app/images/default_profile_picture.jpeg" alt="Wayfarer default profile picture">
     <form action="{% url 'add_photo' profile.id %}" enctype="multipart/form-data" method="POST">
       {% csrf_token %}
-      <div class="form-group">
+      <div class="form-group">      
         <input class="form-control-file btn" type="file" name="photo-file">
+        <p>
         <input type="submit" class="btn btn-primary" value="Add Profile Picture">
       </div>
     </form>

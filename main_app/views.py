@@ -4,7 +4,7 @@ from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.db.models import Count
-from .forms import ProfileForm, ReviewForm
+from .forms import ProfileForm
 from .models import Profile, Review, City, Photo
 import uuid
 import os
@@ -41,7 +41,6 @@ def about(request):
 def profile(request):
   profile = Profile.objects.get(user=request.user)
   reviews = Review.objects.filter(profile_id=profile.id)
-  # reviews = Review.objects.filter(profile_id=profile.id).order_by('date')
   return render(request, 'profile/main.html', {'profile':profile, 'reviews':reviews})
 
 # Define the signup view
