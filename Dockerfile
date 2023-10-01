@@ -2,7 +2,7 @@
 FROM python:3.8
 
 # Set the working directory in the container
-WORKDIR /wafarer
+WORKDIR /wayfarer
 
 # Copy the application files into the working directory
 COPY . /wayfarer
